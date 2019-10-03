@@ -1,0 +1,14 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^data-raw$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^r2dii\.dataraw\.Rproj$
+^\.RData$
+^\.Rhistory$
+
+^README\.Rmd$
+^buildignore$
+
+^\.github$

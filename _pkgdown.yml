@@ -1,0 +1,62 @@
+destination: docs
+
+template:
+  params:
+    bootswatch: flatly
+
+url: https://github.com/2DegreesInvesting/r2dii.dataraw/
+
+authors:
+  Mauro Lepore:
+    href: https://github.com/maurolepore/
+  2 Degrees Investing Initiative:
+    href: https://2degrees-investing.org/
+
+home:
+  links:
+  - text: Learn more
+    href: https://2degrees-investing.org/
+
+
+
+navbar:
+
+  type: default
+
+  right:
+    - icon: fa-gavel
+      href: https://github.com/maurolepore/
+
+    - icon: fa-github
+      href: https://github.com/2DegreesInvesting/r2dii.dataraw/
+
+    - text: r2dii
+      href: https://2degreesinvesting.github.io/r2dii/index.html
+
+reference:
+
+  - title: Handle snapshots
+    contents:
+      - has_concept("handle snapshots")
+
+  - title: Generic datasets
+    contents:
+      - has_concept("generic datasets")
+
+  - title: Exported datasets
+    contents:
+      - has_concept("demo datasets")
+
+  - title: Datasets from the Reference repository
+    contents:
+      - has_concept("datasets in Reference")
+      - has_concept("datasets in Reference to remove or outsource to data store")
+
+  - title: Datasets in datastore
+    contents:
+      - has_concept("datasets in datastore")
+
+  - title: Other datasets
+    contents:
+      - has_concept("datasets in directories other than Reference or datastore")
+

@@ -1,0 +1,6 @@
+.Rhistory
+.Rproj.user
+
+data-raw/private
+tests/testthat/ref*
+tests/testthat/2018Q4_mauroexplores/*

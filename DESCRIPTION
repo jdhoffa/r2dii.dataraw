@@ -1,0 +1,60 @@
+Package: r2dii.dataraw
+Title: Access Raw Or Lightly-Prepared Data
+Version: 0.0.1.9001
+Authors@R: 
+    c(person(given = "Mauro",
+             family = "Lepore",
+             role = c("aut", "cre"),
+             email = "mauro@2degrees-investing.org",
+             comment = c(ORCID = "0000-0002-1986-7988")),
+      person(given = "Clare",
+             family = "Murray",
+             role = "aut",
+             email = "clare@2degrees-investing.org"),
+      person(given = "Klaus",
+             family = "Hogedorn",
+             role = "aut",
+             email = "klaus@2degrees-investing.org"),
+      person(given = "2 Degrees Investing Initiative",
+             role = c("cph", "fnd"),
+             email = "contact@2degrees-investing.org"))
+Description: The goal of this package is to access raw or
+    lightly-prepared data. It allows you to access "live" data from 2dii's
+    dropbox folder and to take a snapshot of it.
+License: file LICENSE
+URL: https://github.com/2DegreesInvesting/r2dii.dataraw
+BugReports: 
+    https://github.com/2DegreesInvesting/r2dii.dataraw/issues
+Depends: 
+    R (>= 3.4)
+Imports: 
+    config,
+    covr,
+    desc,
+    dplyr,
+    fs,
+    glue,
+    here,
+    lubridate,
+    magrittr,
+    pkgdown,
+    purrr,
+    r2dii.utils,
+    readr,
+    rlang,
+    stats,
+    stringr,
+    tibble,
+    usethis,
+    utils,
+    vroom,
+    withr
+Suggests: 
+    datasets,
+    rmarkdown,
+    roxygen2,
+    testthat (>= 2.1.0)
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
