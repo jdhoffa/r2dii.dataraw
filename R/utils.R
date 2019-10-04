@@ -24,22 +24,6 @@ read_datastore <- function(path) {
   read_csv_(DATA.STORE.PATH(path))
 }
 
-#' Does this computer have a local copy of 2dii's dropbox folder?
-#'
-#' This function helps to skip tests that will fail in a system without a local
-#' copy of 2dii's dropbox folder.
-#'
-#' @return Logical.
-#'
-#' @examples
-#' if (requireNamespace("testthat", quietly = TRUE)) {
-#'   testthat::skip_if_not(dropbox_exists())
-#' }
-#' @noRd
-dropbox_exists <- function() {
-  fs::dir_exists(path_dropbox_2dii())
-}
-
 #' Create a coverage object
 #'
 #' This function is a kind of hack to report coverage. The usual approach with

@@ -10,7 +10,9 @@ SectorBridge()
 Dataset that should probably be removed or outsourced to data store
 }
 \examples{
+if (dropbox_exists()) {
 SectorBridge()
+}
 }
 \seealso{
 Other datasets in Reference to remove or outsource to data store: \code{\link{BicsSectorBridge}},

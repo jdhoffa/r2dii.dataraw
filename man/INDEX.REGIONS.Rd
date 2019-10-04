@@ -11,7 +11,9 @@ Dataset to identify the equity index regions based on the MSCI factsheets,
 e.g. 23 countries within the MSCI World.
 }
 \examples{
+if (dropbox_exists()) {
 INDEX.REGIONS()
+}
 }
 \seealso{
 Other datasets in Reference: \code{\link{BENCH.REGIONS}}
