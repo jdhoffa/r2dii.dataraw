@@ -3,6 +3,7 @@
 #' @family datasets in directories other than Reference or datastore
 #' @family possible_snapshots
 #' @examples
+#' \dontrun{
 #' # Quarter 2, 2019, contains the relevant data
 #' restore <- options(
 #'   r2dii_config = r2dii.utils::example_config("config_2019Q2.yml")
@@ -11,6 +12,7 @@
 #' LoanMarket()
 #'
 #' options(restore)
+#' }
 LoanMarket <- function() {
   file <- glue("{FINANCIAL.TIMESTAMP()}.CORP.BICS.Others.Corp.Loans.csv")
   read_csv_(CBMARKET.DATA.PATH(file), fileEncoding = "UTF-8-BOM")
@@ -21,6 +23,7 @@ LoanMarket <- function() {
 #' @family datasets in directories other than Reference or datastore
 #' @family possible_snapshots
 #' @examples
+#' \dontrun{
 #' # Quarter 2, 2019, contains the relevant data
 #' restore <- options(
 #'   r2dii_config = r2dii.utils::example_config("config_2019Q2.yml")
@@ -29,6 +32,7 @@ LoanMarket <- function() {
 #' LoanMarketClimate()
 #'
 #' options(restore)
+#' }
 LoanMarketClimate <- function() {
   file <- glue("{FINANCIAL.TIMESTAMP()}.CORP.BICS.ModelRelevant.Corp.Loans.csv")
   read_csv_(CBMARKET.DATA.PATH(file), fileEncoding = "UTF-8-BOM")

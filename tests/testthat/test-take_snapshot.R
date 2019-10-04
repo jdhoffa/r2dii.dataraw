@@ -1,4 +1,6 @@
 test_that("take_snapshot save BENCH.REGIONS as a tibble", {
+  skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
+
   temp_root <- fs::path(tempdir(), "newdir")
   fs::dir_create(temp_root)
   # withr::local_dir(temp_root)
@@ -10,6 +12,8 @@ test_that("take_snapshot save BENCH.REGIONS as a tibble", {
 })
 
 test_that("take_snapshot defaults to write snapshots in working directory", {
+  skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
+
   temp_root <- fs::path(tempdir(), "newdir")
   fs::dir_create(temp_root)
   withr::local_dir(temp_root)
@@ -21,6 +25,8 @@ test_that("take_snapshot defaults to write snapshots in working directory", {
 })
 
 test_that("take_snapshot creates a destdir if it doesn't exist", {
+  skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
+
   destdir <- fs::path(tempdir(), "newdir")
   take_snapshot("BENCH.REGIONS", destdir = destdir)
   expect_true(fs::dir_exists(destdir))
@@ -29,6 +35,8 @@ test_that("take_snapshot creates a destdir if it doesn't exist", {
 })
 
 test_that("take_snapshot saves an exported dataset to a new `destdir`", {
+  skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
+
   destdir <- fs::path(tempdir(), "newdir")
   take_snapshot("BENCH.REGIONS", destdir = destdir)
   expect_true(fs::dir_exists(destdir))
@@ -37,6 +45,8 @@ test_that("take_snapshot saves an exported dataset to a new `destdir`", {
 })
 
 test_that("take_snapshot saves an exported dataset to a new `destdir`", {
+  skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
+
   destdir <- fs::path(tempdir(), "newdir")
   take_snapshot("SEC.TYPE.BONDS", destdir = destdir)
   paths <- fs::dir_ls(destdir)
@@ -152,6 +162,8 @@ test_that("take_snapshot writes a data.frame from a data-function", {
 })
 
 test_that("take_snapshot writes a data.frame from an exported dataset", {
+  skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
+
   path <- fs::path(tempdir(), "RevenueSplit.csv")
   # I can't figure out why this warning happens
   suppressWarnings(

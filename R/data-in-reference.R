@@ -5,6 +5,7 @@
 #'
 #' @export
 #' @examples
+#' if (dropbox_exists()) {
 #' library(dplyr)
 #'
 #' BENCH.REGIONS()
@@ -12,6 +13,7 @@
 #' # The `CountryISO` of Namibia is the literal string "NA"
 #' BENCH.REGIONS() %>%
 #'   filter(Country == "Namibia")
+#' }
 BENCH.REGIONS <- function() {
   # C:\Users\Mauro\Dropbox (2° Investing)\2° Investing Team\People\Klaus\
   # GitHub\Reference\ReferenceData\BenchRegions.rda
@@ -37,7 +39,9 @@ BENCH.REGIONS <- function() {
 #'
 #' @export
 #' @examples
+#' if (dropbox_exists()) {
 #' INDEX.REGIONS()
+#' }
 INDEX.REGIONS <- function() {
   # Online at https://github.com/2DegreesInvesting/Reference/blob/master/...
   # ...ReferenceData/IndexRegions.rda
@@ -60,7 +64,9 @@ INDEX.REGIONS <- function() {
 #'
 #' @export
 #' @examples
+#' if (dropbox_exists()) {
 #' sector.bridge()
+#' }
 sector.bridge <- function() {
   # Online at https://github.com/2DegreesInvesting/Reference/blob/master/...
   # ...ReferenceData/OldSectorBridge.csv
@@ -75,7 +81,9 @@ sector.bridge <- function() {
 #'
 #' @export
 #' @examples
+#' if (dropbox_exists()) {
 #' SectorBridge()
+#' }
 SectorBridge <- function() {
   # Online at https://github.com/2DegreesInvesting/Reference/blob/master/...
   # ...ReferenceData/SectorBridge.csv
@@ -90,7 +98,9 @@ SectorBridge <- function() {
 #'
 #' @export
 #' @examples
+#' if (dropbox_exists()) {
 #' BicsSectorBridge()
+#' }
 BicsSectorBridge <- function() {
   # Online at https://github.com/2DegreesInvesting/Reference/blob/master/...
   # ...DataPreparation/BICS_old%20to%20new_bridge.csv
@@ -105,7 +115,9 @@ BicsSectorBridge <- function() {
 #'
 #' @export
 #' @examples
+#' if (dropbox_exists()) {
 #' RevenueSplit()
+#' }
 RevenueSplit <- function() {
   # Online at https://github.com/2DegreesInvesting/Reference/blob/master/...
   # ...DataPreparation/ClimateSectorDups_proxy_RevenueSplit.csv
