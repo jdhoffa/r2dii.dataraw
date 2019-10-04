@@ -28,9 +28,7 @@ follows:
 
 ``` r
 # install.packages("devtools")
-
-# To install from a private repo, see ?usethis::browse_github_token()
-devtools::install_github("2DegreesInvesting/r2dii.dataraw", auth_token = "abc")
+devtools::install_github("2DegreesInvesting/r2dii.dataraw")
 ```
 
 ## Example
