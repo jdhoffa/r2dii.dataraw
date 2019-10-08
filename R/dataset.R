@@ -87,9 +87,12 @@ BALANCE.SHEET.DATA <- function() {
 #' EQMarket.Size()
 #' }
 EQMarket.Size <- function() {
-  # FIXME? https://github.com/2DegreesInvesting/Reference/issues/35
   path <- EQMARKET.DATA.PATH("EQMarketSizeBasedOnIndices.csv")
-  tibble::as_tibble(utils::read.csv(path))
+  tibble::as_tibble(read_csv_(path)) %>%
+    # Preserves legacy structure in a way that is:
+    # * more obvious that strings are converted to factors
+    # * is easy to refactor.
+    purrr::modify_if(is.character, as.factor)
 }
 
 #' Dataset
