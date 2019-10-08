@@ -43,14 +43,6 @@ test_that("Fund.Data output is as expected", {
   expect_known_value(out, "ref-Fund.Data", update = .update)
 })
 
-test_that("ALD.Company output is as expected", {
-  skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
-  skip_if_do_skip()
-  out <- ALD.Company()
-
-  expect_known_value(out, "ref-ALD.Company", update = .update)
-})
-
 test_that("ALD.EQ output is as expected", {
   skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
   skip_if_do_skip()

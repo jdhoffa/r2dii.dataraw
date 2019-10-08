@@ -20,8 +20,8 @@ Other datasets in Reference: \code{\link{BENCH.REGIONS}}
 
 Other possible_snapshots: \code{\link{ALD.BV}},
   \code{\link{ALD.CB}}, \code{\link{ALD.CC}},
-  \code{\link{ALD.Company}}, \code{\link{ALD.EQ}},
-  \code{\link{ALD.SPV}}, \code{\link{BALANCE.SHEET.DATA}},
+  \code{\link{ALD.EQ}}, \code{\link{ALD.SPV}},
+  \code{\link{BALANCE.SHEET.DATA}},
   \code{\link{BENCH.REGIONS}},
   \code{\link{BicsSectorBridge}}, \code{\link{CB_OG}},
   \code{\link{DebtMarketClimate}},

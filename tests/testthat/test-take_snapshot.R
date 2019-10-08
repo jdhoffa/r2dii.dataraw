@@ -204,7 +204,6 @@ test_that("possible_snapshots hasn't changed", {
     "ALD.BV",
     "ALD.CB",
     "ALD.CC",
-    "ALD.Company",
     "ALD.EQ",
     "ALD.SPV",
     "BALANCE.SHEET.DATA",

@@ -62,18 +62,6 @@ Fund.Data <- function() {
 #' @family possible_snapshots
 #' @examples
 #' \dontrun{
-#' ALD.Company()
-#' }
-ALD.Company <- function() {
-  ALD.EQ()
-}
-
-#' Dataset
-#' @export
-#' @family datasets in datastore
-#' @family possible_snapshots
-#' @examples
-#' \dontrun{
 #' ALD.EQ()
 #' }
 ALD.EQ <- function() {

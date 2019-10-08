@@ -17,17 +17,16 @@ BALANCE.SHEET.DATA()
 \seealso{
 Other datasets in datastore: \code{\link{ALD.BV}},
   \code{\link{ALD.CB}}, \code{\link{ALD.CC}},
-  \code{\link{ALD.Company}}, \code{\link{ALD.EQ}},
-  \code{\link{ALD.SPV}}, \code{\link{CB_OG}},
-  \code{\link{EQ_OG}}, \code{\link{FIN.DATA}},
-  \code{\link{FundsTrusts}}, \code{\link{Receipts}},
-  \code{\link{SEC.TYPE.BONDS}}, \code{\link{TYPE.BONDS}},
-  \code{\link{TYPE.RECEIPTS}}
+  \code{\link{ALD.EQ}}, \code{\link{ALD.SPV}},
+  \code{\link{CB_OG}}, \code{\link{EQ_OG}},
+  \code{\link{FIN.DATA}}, \code{\link{FundsTrusts}},
+  \code{\link{Receipts}}, \code{\link{SEC.TYPE.BONDS}},
+  \code{\link{TYPE.BONDS}}, \code{\link{TYPE.RECEIPTS}}
 
 Other possible_snapshots: \code{\link{ALD.BV}},
   \code{\link{ALD.CB}}, \code{\link{ALD.CC}},
-  \code{\link{ALD.Company}}, \code{\link{ALD.EQ}},
-  \code{\link{ALD.SPV}}, \code{\link{BENCH.REGIONS}},
+  \code{\link{ALD.EQ}}, \code{\link{ALD.SPV}},
+  \code{\link{BENCH.REGIONS}},
   \code{\link{BicsSectorBridge}}, \code{\link{CB_OG}},
   \code{\link{DebtMarketClimate}},
   \code{\link{DebtMarket}}, \code{\link{EQMarket.Size}},
