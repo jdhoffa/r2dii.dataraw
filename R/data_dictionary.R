@@ -34,8 +34,6 @@
 #'
 #' @return A [tibble::tibble].
 #'
-#' @keywords internal
-#'
 #' @examples
 #' data_dictionary
 #'

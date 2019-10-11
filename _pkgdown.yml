@@ -45,7 +45,6 @@ reference:
 
   - title: Demo datasets
     contents:
-      - data_dictionary
       - has_concept("demo datasets")
 
   - title: Datasets from the Reference repository

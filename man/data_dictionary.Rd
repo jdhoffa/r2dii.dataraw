@@ -54,4 +54,4 @@ create_data_dictionary("loanbook_demo", package = "r2dii.dataraw")
 Other demo datasets: \code{\link{loanbook_demo}}
 }
 \concept{demo datasets}
-\keyword{internal}
+\keyword{datasets}
