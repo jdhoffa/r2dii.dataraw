@@ -17,7 +17,5 @@ data_dictionary \%>\%
 }
 \seealso{
 \link{data_dictionary}
-
-Other generic datasets: \code{\link{data_dictionary}}
 }
 \concept{generic datasets}

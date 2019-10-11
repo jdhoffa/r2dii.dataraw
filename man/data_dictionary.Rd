@@ -22,8 +22,10 @@ A \link[tibble:tibble]{tibble::tibble}.
 \description{
 \itemize{
 \item \code{data_dictionary} is a dataset that defines the columns of other r2dii
-datasets. `create_data_dictionary() is a function that helps extend the
-\item \code{data_dictionary} dataset.
+datasets.
+\item \code{create_data_dictionary()} is a function that helps extend
+\code{data_dictionary}. It is particularly useful when combined with
+\code{datapasta::tibble_paste()}. See details.
 }
 }
 \details{
@@ -45,10 +47,11 @@ You can then replace each \code{NA} with a corresponding \code{definition}.
 \examples{
 data_dictionary
 
+# This is particulary useful when combined with `datapasta::tribble_paste()`
 create_data_dictionary("loanbook_demo", package = "r2dii.dataraw")
 }
 \seealso{
-Other generic datasets: \code{\link{loanbook_description}}
+Other demo datasets: \code{\link{loanbook_demo}}
 }
-\concept{generic datasets}
+\concept{demo datasets}
 \keyword{internal}

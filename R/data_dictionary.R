@@ -1,8 +1,10 @@
 #' Data dictionary
 #'
 #' * `data_dictionary` is a dataset that defines the columns of other r2dii
-#' datasets. `create_data_dictionary() is a function that helps extend the
-#' * `data_dictionary` dataset.
+#' datasets.
+#' * `create_data_dictionary()` is a function that helps extend
+#' `data_dictionary`. It is particularly useful when combined with
+#' `datapasta::tibble_paste()`. See details.
 #'
 #' You may combine `create_data_dictionary()` with `datapasta::tribble_paste()`
 #' to create a tibble you can conveniently fill. For example, Code like this:
@@ -28,7 +30,7 @@
 #' @param dataset A length-1 character string giving the name of a dataset.
 #' @param package A length-1 character string giving the name of a package.
 #'
-#' @family generic datasets
+#' @family demo datasets
 #'
 #' @return A [tibble::tibble].
 #'
@@ -37,6 +39,7 @@
 #' @examples
 #' data_dictionary
 #'
+#' # This is particulary useful when combined with `datapasta::tribble_paste()`
 #' create_data_dictionary("loanbook_demo", package = "r2dii.dataraw")
 "data_dictionary"
 
