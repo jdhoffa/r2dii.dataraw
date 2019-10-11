@@ -3,21 +3,52 @@
 \docType{data}
 \name{data_dictionary}
 \alias{data_dictionary}
+\alias{create_data_dictionary}
 \title{Data dictionary}
 \format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 21 rows and 3 columns.}
 \usage{
 data_dictionary
+
+create_data_dictionary(dataset, package = NULL)
+}
+\arguments{
+\item{dataset}{A length-1 character string giving the name of a dataset.}
+
+\item{package}{A length-1 character string giving the name of a package.}
+}
+\value{
+A \link[tibble:tibble]{tibble::tibble}.
 }
 \description{
-This dataset defines the columns of r2dii datasets.
+\itemize{
+\item \code{data_dictionary} is a dataset that defines the columns of other r2dii
+datasets. `create_data_dictionary() is a function that helps extend the
+\item \code{data_dictionary} dataset.
+}
+}
+\details{
+You may combine \code{create_data_dictionary()} with \code{datapasta::tribble_paste()}
+to create a tibble you can conveniently fill. For example, Code like this:\preformatted{create_data_dictionary("loanbook_demo", package = "r2dii.dataraw") \%>\%
+  datapasta::tribble_paste()
+}
+
+outputs something like this:\preformatted{tibble::tribble(
+  ~dataset,                                         ~column, ~definition,
+  "loanbook_demo",                                "id_loan",          NA,
+  "loanbook_demo",                    "id_direct_loantaker",          NA,
+...
+)
+}
+
+You can then replace each \code{NA} with a corresponding \code{definition}.
 }
 \examples{
 data_dictionary
+
+create_data_dictionary("loanbook_demo", package = "r2dii.dataraw")
 }
 \seealso{
-\link{create_data_dictionary}.
-
 Other generic datasets: \code{\link{loanbook_description}}
 }
 \concept{generic datasets}
-\keyword{datasets}
+\keyword{internal}
