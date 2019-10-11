@@ -15,6 +15,8 @@ This dataset defines the columns of r2dii datasets.
 data_dictionary
 }
 \seealso{
+\link{create_data_dictionary}.
+
 Other generic datasets: \code{\link{loanbook_description}}
 }
 \concept{generic datasets}

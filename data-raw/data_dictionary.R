@@ -2,18 +2,6 @@ library(glue)
 library(rlang)
 library(readr)
 
-enframe_dictionary <- function(dataset, package = NULL) {
-  package <- package %||% fs::path_file(usethis::proj_get())
-  stopifnot(is.character(dataset), is.character(package))
-
-  dataset_ <- get(dataset, envir = as.environment(glue("package:{package}")))
-  tibble::tibble(
-    dataset = dataset,
-    column = names(dataset_),
-    definition = NA_character_
-  )
-}
-
 data_dictionary <- tibble::tribble(
   ~dataset,          ~column,      ~definition,
   "data_dictionary", "dataset",    "The name of a dataset",
