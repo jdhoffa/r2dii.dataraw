@@ -9,12 +9,10 @@
 \usage{
 data_dictionary
 
-create_data_dictionary(dataset, package = NULL)
+create_data_dictionary(dataset)
 }
 \arguments{
-\item{dataset}{A length-1 character string giving the name of a dataset.}
-
-\item{package}{A length-1 character string giving the name of a package.}
+\item{dataset}{A dataframe.}
 }
 \value{
 A \link[tibble:tibble]{tibble::tibble}.
@@ -29,26 +27,27 @@ datasets.
 }
 }
 \details{
-You may combine \code{create_data_dictionary()} with \code{datapasta::tribble_paste()}
-to create a tibble you can conveniently fill. For example, Code like this:\preformatted{create_data_dictionary("loanbook_demo", package = "r2dii.dataraw") \%>\%
-  datapasta::tribble_paste()
-}
+You may combine \code{create_data_dictionary()} with \code{datapasta::tribble_paste()}.
+For example, this code:\preformatted{library(r2dii.dataraw)
+new_data <- tibble::tibble(x = 1, y = "a")
 
-outputs something like this:\preformatted{tibble::tribble(
-  ~dataset,                                         ~column, ~definition,
-  "loanbook_demo",                                "id_loan",          NA,
-  "loanbook_demo",                    "id_direct_loantaker",          NA,
-...
+datapasta::tribble_paste(
+  create_data_dictionary(new_data)
 )
 }
 
-You can then replace each \code{NA} with a corresponding \code{definition}.
+outputs this text so you can conveniently fill the \code{definition} column:\preformatted{tibble::tribble(
+  ~dataset,   ~column, ~definition,
+  "new_data",     "x",          NA,
+  "new_data",     "y",          NA
+)
+}
 }
 \examples{
 data_dictionary
 
-# This is particulary useful when combined with `datapasta::tribble_paste()`
-create_data_dictionary("loanbook_demo", package = "r2dii.dataraw")
+new_dataset <- tibble::tibble(x = 1, y = "a")
+create_data_dictionary(new_dataset)
 }
 \seealso{
 Other demo datasets: \code{\link{loanbook_demo}}

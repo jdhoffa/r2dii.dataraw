@@ -41,7 +41,7 @@ Imports:
     pkgdown,
     purrr,
     readr,
-    rlang,
+    rlang (>= 0.1.2),
     stats,
     stringr,
     tibble,

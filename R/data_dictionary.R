@@ -6,29 +6,29 @@
 #' `data_dictionary`. It is particularly useful when combined with
 #' `datapasta::tibble_paste()`. See details.
 #'
-#' You may combine `create_data_dictionary()` with `datapasta::tribble_paste()`
-#' to create a tibble you can conveniently fill. For example, Code like this:
+#' You may combine `create_data_dictionary()` with `datapasta::tribble_paste()`.
+#' For example, this code:
 #'
-#' ```R
-#' create_data_dictionary("loanbook_demo", package = "r2dii.dataraw") %>%
-#'   datapasta::tribble_paste()
 #' ```
+#' library(r2dii.dataraw)
+#' new_data <- tibble::tibble(x = 1, y = "a")
 #'
-#' outputs something like this:
-#'
-#' ```R
-#' tibble::tribble(
-#'   ~dataset,                                         ~column, ~definition,
-#'   "loanbook_demo",                                "id_loan",          NA,
-#'   "loanbook_demo",                    "id_direct_loantaker",          NA,
-#' ...
+#' datapasta::tribble_paste(
+#'   create_data_dictionary(new_data)
 #' )
 #' ```
 #'
-#' You can then replace each `NA` with a corresponding `definition`.
+#' outputs this text so you can conveniently fill the `definition` column:
 #'
-#' @param dataset A length-1 character string giving the name of a dataset.
-#' @param package A length-1 character string giving the name of a package.
+#' ```
+#' tibble::tribble(
+#'   ~dataset,   ~column, ~definition,
+#'   "new_data",     "x",          NA,
+#'   "new_data",     "y",          NA
+#' )
+#' ```
+#'
+#' @param dataset A dataframe.
 #'
 #' @family demo datasets
 #'
@@ -37,26 +37,19 @@
 #' @examples
 #' data_dictionary
 #'
-#' # This is particulary useful when combined with `datapasta::tribble_paste()`
-#' create_data_dictionary("loanbook_demo", package = "r2dii.dataraw")
+#' new_dataset <- tibble::tibble(x = 1, y = "a")
+#' create_data_dictionary(new_dataset)
 "data_dictionary"
 
 #' @rdname data_dictionary
 #' @export
-create_data_dictionary <- function(dataset, package = NULL) {
-  package <- package %||% fs::path_file(usethis::proj_get())
+create_data_dictionary <- function(dataset) {
+  dataset_name <- rlang::quo_text(rlang::enquo(dataset))
+  column_names <- names(dataset)
 
-  dataset_has_length_1 <- identical(length(dataset), 1L)
-  stopifnot(
-    dataset_has_length_1,
-    is.character(dataset),
-    is.character(package)
-  )
-
-  dataset_ <- get(dataset, envir = as.environment(glue("package:{package}")))
   tibble::tibble(
-    dataset = dataset,
-    column = names(dataset_),
+    dataset = dataset_name,
+    column = column_names,
     definition = NA_character_
   )
 }
