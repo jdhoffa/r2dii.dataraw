@@ -1,3 +1,4 @@
+# TODO: DRY with r2dii.utils::check_crucial_names()
 check_crucial_names <- function(x, expected_names) {
   stopifnot(rlang::is_named(x))
   stopifnot(is.character(expected_names))
