@@ -112,3 +112,16 @@ remove_rownames_column <- function(data) {
   data$X1 <- NULL
   data
 }
+
+#' Output a character vector with the names of exported data/
+#'
+#' @param package Lenght-1 character vector.
+#'
+#' @return Character vector.
+#'
+#' @examples
+#' exported_data("r2dii.dataraw")
+#' @noRd
+exported_data <- function(package) {
+  utils::data(package = package)$results[, "Item"]
+}
