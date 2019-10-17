@@ -1,5 +1,4 @@
 config
-datapasta
 dataraw
 datastore
 dii
@@ -9,8 +8,10 @@ dropbox
 eval
 factsheets
 funder
+http
 Lifecycle
 loanbook
+ly
 Metaprogramming
 MSCI
 summarise

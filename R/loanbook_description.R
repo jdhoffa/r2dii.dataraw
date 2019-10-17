@@ -11,6 +11,6 @@
 #' @examples
 #' library(dplyr)
 #'
-#' data_dictionary %>%
+#' data_dictionary() %>%
 #'   filter(dataset == "loanbook")
 NULL

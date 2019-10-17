@@ -1,55 +1,37 @@
-#' Data dictionary
+#' A dataset that defiles the columns of r2dii datasets
 #'
-#' * `data_dictionary` is a dataset that defines the columns of other r2dii
-#' datasets.
-#' * `create_data_dictionary()` is a function that helps extend
-#' `data_dictionary`. It is particularly useful when combined with
-#' `datapasta::tibble_paste()`. See details.
-#'
-#' You may combine `create_data_dictionary()` with `datapasta::tribble_paste()`.
-#' For example, this code:
-#'
-#' ```
-#' library(r2dii.dataraw)
-#' new_data <- tibble::tibble(x = 1, y = "a")
-#'
-#' datapasta::tribble_paste(
-#'   create_data_dictionary(new_data)
-#' )
-#' ```
-#'
-#' outputs this text so you can conveniently fill the `definition` column:
-#'
-#' ```
-#' tibble::tribble(
-#'   ~dataset,   ~column, ~definition,
-#'   "new_data",     "x",          NA,
-#'   "new_data",     "y",          NA
-#' )
-#' ```
-#'
-#' @param dataset A dataframe.
+#' @section Extending the data dictionary:
+#' To extend the output of `data_dictionary()` so that it includes
+#' the `definition` and `typeof` each `column` of a new `dataset`,
+#' you should fill the Google Sheet at <http://bit.ly/data_dictionary_template>,
+#' then create a new dataset issue at <http://bit.ly/new-dataset-issue>.
 #'
 #' @family demo datasets
-#'
 #' @return A [tibble::tibble].
 #'
-#' @examples
-#' data_dictionary
-#'
-#' new_dataset <- tibble::tibble(x = 1, y = "a")
-#' create_data_dictionary(new_dataset)
-"data_dictionary"
-
-#' @rdname data_dictionary
 #' @export
-create_data_dictionary <- function(dataset) {
-  dataset_name <- rlang::quo_text(rlang::enquo(dataset))
-  column_names <- names(dataset)
+#' @examples
+#' data_dictionary()
+data_dictionary <- function() {
+  out <- dplyr::bind_rows(
+    get_inst_extdata("data_dictionary.csv"),
+    get_inst_extdata("loanbook.csv"),
+    get_inst_extdata("nace_classification.csv"),
+    get_inst_extdata("isic_classification.csv"),
+  )
 
-  tibble::tibble(
-    dataset = dataset_name,
-    column = column_names,
-    definition = NA_character_
+  dplyr::arrange(out, .data$dataset, .data$column)
+}
+
+path_inst_extdata <- function(regexp = NULL) {
+  fs::dir_ls(
+    system.file("extdata", package = "r2dii.dataraw"),
+    regexp = regexp
+  )
+}
+
+get_inst_extdata <- function(regexp = NULL) {
+  suppressMessages(
+    readr::read_csv(path_inst_extdata(regexp))
   )
 }

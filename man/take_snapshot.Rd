@@ -28,6 +28,7 @@ Returns \code{NULL}. It's called for its side effect.
 Snapshots datasets and the configuration file
 }
 \examples{
+\dontrun{
 library(r2dii.utils)
 
 # Use `config` to provide a local, custom configuration file, locally -- to
@@ -46,6 +47,7 @@ take_snapshot(
 )
 
 options(restore)
+}
 }
 \seealso{
 \link{get_config}.

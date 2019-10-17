@@ -1,20 +1,23 @@
-library(tibble)
-
 test_that("data_dictionary hasn't changed", {
   expect_known_value(
-    data_dictionary, "ref-data_dictionary",
+    data_dictionary(), "ref-data_dictionary",
     update = FALSE
   )
 })
 
-test_that("create_data_dictionary outupts the expected tibble", {
-  new_data <- tibble::tibble(x = 1, y = "a")
-  out <- create_data_dictionary(new_data)
-
-  reference <- tibble::tribble(
-    ~dataset,   ~column,   ~definition,
-    "new_data",     "x", NA_character_,
-    "new_data",     "y", NA_character_
+test_that("data_dictionary has the expected names", {
+  expect_named(
+    data_dictionary(),
+    c("dataset", "column", "typeof", "definition")
   )
-  expect_equal(out, reference)
+})
+
+test_that("data_dictionary defines all its names", {
+  dd_definitions <- data_dictionary() %>%
+    dplyr::filter(.data$dataset == "data_dictionary")
+
+  expect_equal(nrow(dd_definitions), 4L)
+
+  dd_columns <- sort(dd_definitions$column)
+  expect_equal(dd_columns, sort(names(data_dictionary())))
 })

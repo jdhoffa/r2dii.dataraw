@@ -69,6 +69,7 @@ github_wont_render <- function(data) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' library(r2dii.utils)
 #'
 #' # Use `config` to provide a local, custom configuration file, locally -- to
@@ -87,6 +88,7 @@ github_wont_render <- function(data) {
 #' )
 #'
 #' options(restore)
+#' }
 take_snapshot <- function(datasets = NULL,
                           destdir = NULL,
                           overwrite = FALSE,
