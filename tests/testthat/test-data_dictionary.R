@@ -1,3 +1,19 @@
+test_that("data_dictionary defines the expected objects", {
+  datasets <- data_dictionary() %>%
+    dplyr::pull(dataset) %>%
+    unique()
+
+  expected_datasets <- c(
+    "data_dictionary",
+    "loanbook",
+    "nace_classification",
+    "isic_classification",
+    "name_reductions"
+  )
+
+  expect_equal(sort(datasets), sort(expected_datasets))
+})
+
 test_that("data_dictionary hasn't changed", {
   expect_known_value(
     data_dictionary(), "ref-data_dictionary",

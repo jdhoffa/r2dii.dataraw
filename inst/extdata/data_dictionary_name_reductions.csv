@@ -1,0 +1,3 @@
+dataset,column,typeof,definition
+name_reductions,from,character,The string to reduce from
+name_reductions,to,character,The resulting reduced string

@@ -1,6 +1,6 @@
 #' @importFrom rlang %||% inform warn abort
 #' @importFrom glue glue
-#' @importFrom usethis ui_path
+#' @importFrom usethis ui_path ui_todo ui_code
 #' @importFrom dplyr mutate if_else
 #' @importFrom tibble as_tibble
 #' @import r2dii.utils
