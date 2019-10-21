@@ -7,8 +7,7 @@ test_that("data_dictionary defines the expected objects", {
     "data_dictionary",
     "loanbook",
     "nace_classification",
-    "isic_classification",
-    "name_reductions"
+    "isic_classification"
   )
 
   expect_equal(sort(datasets), sort(expected_datasets))

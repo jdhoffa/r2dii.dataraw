@@ -17,8 +17,7 @@ data_dictionary <- function() {
     get_inst_extdata("data_dictionary.csv"),
     get_inst_extdata("loanbook.csv"),
     get_inst_extdata("nace_classification.csv"),
-    get_inst_extdata("isic_classification.csv"),
-    get_inst_extdata("name_reductions.csv")
+    get_inst_extdata("isic_classification.csv")
   )
 
   dplyr::arrange(out, .data$dataset, .data$column)
