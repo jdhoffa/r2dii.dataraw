@@ -10,7 +10,7 @@ read_csv_ <- function(x, ...) {
 }
 
 check_path <- function(path) {
-  if(!fs::file_exists(path)) {
+  if (!fs::file_exists(path)) {
     abort(glue(
       "Can't find {ui_path(path)}.
       There is no such file or directory."
@@ -149,6 +149,13 @@ use_newdata_checklist <- function() {
 
 
   "))
+
+  ui_todo("In {ui_path('R/newdata.R')}, document {ui_code('newdata')}")
+
+  ui_todo(
+    "In {ui_path('test/testthat/test-newdata.R')}, add a regression test for \\
+    {ui_code('newdata')}"
+  )
 
   ui_todo(
     "In {ui_path('R/data_dictionary.R')}, \\

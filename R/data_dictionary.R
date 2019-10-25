@@ -16,6 +16,7 @@ data_dictionary <- function() {
   out <- dplyr::bind_rows(
     get_inst_extdata("data_dictionary.csv"),
     get_inst_extdata("loanbook.csv"),
+    get_inst_extdata("ald.csv"),
     get_inst_extdata("nace_classification.csv"),
     get_inst_extdata("isic_classification.csv")
   )

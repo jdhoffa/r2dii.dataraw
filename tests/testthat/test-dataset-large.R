@@ -70,4 +70,3 @@ test_that("ALD.CB output is as expected", {
   out <- ALD.CB()
   expect_known_value(out, "ref-ALD.CB", update = .update)
 })
-

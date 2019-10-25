@@ -7,7 +7,7 @@
 #' # Quarter 2, 2019, contains the relevant data
 #' restore <- options(
 #'   r2dii_config = r2dii.utils::example_config("config_2019Q2.yml")
-#'  )
+#' )
 #'
 #' LoanMarket()
 #'
@@ -58,7 +58,7 @@ ALD.BV <- function() {
       Technology = as.character(Technology),
       Year = as.numeric(Year),
       ALD.Production = as.numeric(GrossProduction),
-      ALD.Production = dplyr::if_else(ALD.Production <=0, 0, ALD.Production),
+      ALD.Production = dplyr::if_else(ALD.Production <= 0, 0, ALD.Production),
       ALD.ProductionUnits = as.character(ProductionUnits),
       ALD.EmissionsFactor = as.numeric(AverageEmissionsFactor),
       ALD.link.Level = "Bloomberg_ID",
@@ -125,7 +125,7 @@ DebtMarket <- function() {
 #' @family possible_snapshots
 #' @examples
 #' \dontrun{
-#' if(interactive()) PHYSICAL.RISK.EQ()
+#' if (interactive()) PHYSICAL.RISK.EQ()
 #' }
 PHYSICAL.RISK.EQ <- function() {
   path <- MASTER.DATA.PATH("PortCheck_MasterData_Risk_Ownership.rda")
@@ -162,8 +162,8 @@ SCENLong <- function() {
     dplyr::mutate(
       Sector = dplyr::case_when(
         .data$Units == "PJ" & .data$Scenario != "B2DS" ~ "Demand",
-        .data$Technology == "Coal"                     ~ "Coal",
-        .data$Technology %in% c("Oil","Gas")           ~ "Oil&Gas",
+        .data$Technology == "Coal" ~ "Coal",
+        .data$Technology %in% c("Oil", "Gas") ~ "Oil&Gas",
         TRUE ~ .data$Sector
       )
     ) %>%
@@ -196,8 +196,8 @@ SCEN <- function() {
     dplyr::mutate(
       Sector = dplyr::case_when(
         .data$Units == "PJ" & .data$Scenario != "B2DS" ~ "Demand",
-        .data$Technology == "Coal"                     ~ "Coal",
-        .data$Technology %in% c("Oil","Gas")           ~ "Oil&Gas",
+        .data$Technology == "Coal" ~ "Coal",
+        .data$Technology %in% c("Oil", "Gas") ~ "Oil&Gas",
         TRUE ~ .data$Sector
       )
     ) %>%
@@ -268,7 +268,7 @@ TYPE.RECEIPTS <- function() {
       grepl("Dutch Certificate", FIN.DATA()[["security_type"]]) |
       grepl("Foreign Share", FIN.DATA()[["security_type"]]) |
       grepl("CEDEAR", FIN.DATA()[["security_type"]]),
-    ]
+  ]
 }
 
 #' Dataset
@@ -292,7 +292,7 @@ Receipts <- function() {
       grepl("Dutch Certificate", FIN.DATA()[["security_type"]]) |
       grepl("Foreign Share", FIN.DATA()[["security_type"]]) |
       grepl("CEDEAR", FIN.DATA()[["security_type"]]),
-    ]
+  ]
 }
 
 #' Dataset
@@ -423,6 +423,6 @@ SCEN_raw <- function() {
   data %>%
     tibble::as_tibble() %>%
     dplyr::filter(
-      !(.data$Technology %in% c("HydroCap","NuclearCap") & .data$Units == "PJ")
+      !(.data$Technology %in% c("HydroCap", "NuclearCap") & .data$Units == "PJ")
     )
 }

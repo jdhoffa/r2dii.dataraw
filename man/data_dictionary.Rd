@@ -24,6 +24,7 @@ then create a new dataset issue at \url{http://bit.ly/new-dataset-issue}.
 data_dictionary()
 }
 \seealso{
-Other demo datasets: \code{\link{loanbook_demo}}
+Other demo datasets: \code{\link{ald_demo}},
+  \code{\link{loanbook_demo}}
 }
 \concept{demo datasets}

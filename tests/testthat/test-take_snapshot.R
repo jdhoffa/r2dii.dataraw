@@ -57,7 +57,7 @@ test_that("take_snapshot saves an exported dataset to a new `destdir`", {
   paths <- fs::dir_ls(destdir)
   csv_txt <- any(stringr::str_detect(paths, stringr::fixed(".csv.txt")))
   expect_false(csv_txt)
-  })
+})
 
 test_that("take_snapshot prefers `conig` set locally than globally", {
   skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
@@ -250,7 +250,7 @@ test_that("possible_snapshots hasn't changed", {
 })
 
 test_that("take_snapshot errs if r2dii.dataraw is not attached", {
-  if(any(grepl("package:r2dii.dataraw", search()))) {
+  if (any(grepl("package:r2dii.dataraw", search()))) {
     detach("package:r2dii.dataraw")
   }
 

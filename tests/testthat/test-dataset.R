@@ -176,5 +176,3 @@ test_that("Indices output is as expected", {
   out <- Indices()
   expect_known_value(out, "ref-Indices", update = .update)
 })
-
-
