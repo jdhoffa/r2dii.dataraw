@@ -48,7 +48,12 @@ test_that("take_snapshot saves an exported dataset to a new `destdir`", {
   skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
 
   destdir <- fs::path(tempdir(), "newdir")
-  take_snapshot("SEC.TYPE.BONDS", destdir = destdir)
+  take_snapshot(
+    "SEC.TYPE.BONDS",
+    destdir = destdir,
+    # This config points to a directory containing the relevant data
+    config = test_path("config_2018Q3_export_05082019.yml")
+  )
   paths <- fs::dir_ls(destdir)
   csv_txt <- any(stringr::str_detect(paths, stringr::fixed(".csv.txt")))
   expect_false(csv_txt)
@@ -172,14 +177,18 @@ test_that("take_snapshot writes a data.frame from an exported dataset", {
   expect_is(vroom::vroom(path), "data.frame")
 })
 
-test_that("take_snapshot writes a character form a data-function", {
+test_that("take_snapshot writes a character from a data-function", {
   skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
 
   path <- fs::path(tempdir(), "TYPE.BONDS.txt")
-  # I can't figure out why this warning happens
-  suppressWarnings(
-    take_snapshot("TYPE.BONDS", destdir = tempdir(), overwrite = TRUE)
+  take_snapshot(
+    "TYPE.BONDS",
+    destdir = tempdir(),
+    overwrite = TRUE,
+    # This config points to a directory containing the relevant data
+    config = test_path("config_2018Q3_export_05082019.yml")
   )
+
   expect_is(readr::read_lines(path), "character")
 })
 
