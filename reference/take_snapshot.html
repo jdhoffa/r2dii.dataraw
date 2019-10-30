@@ -172,14 +172,16 @@ file).</p></td>
 <span class='no'>datasets</span> <span class='kw'>&lt;-</span> <span class='st'>"DebtMarketClimate"</span>
 <span class='no'>custom_config</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>r2dii.utils</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/r2dii.utils/man/default_config.html'>example_config</a></span>(<span class='st'>"config-toy.yml"</span>)
 <span class='fu'>take_snapshot</span>(
-  <span class='no'>datasets</span>, <span class='kw'>destdir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>(), <span class='kw'>overwrite</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>config</span> <span class='kw'>=</span> <span class='no'>custom_config</span>
- )
+  <span class='no'>datasets</span>,
+  <span class='kw'>destdir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>(), <span class='kw'>overwrite</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>config</span> <span class='kw'>=</span> <span class='no'>custom_config</span>
+)
 
 <span class='co'># Use `options(r2dii_config = &lt;custom_config&gt;)` to provide a custom</span>
 <span class='co'># configuration file, globally -- to affect your entire R session</span>
 <span class='no'>restore</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>options</a></span>(<span class='kw'>r2dii_config</span> <span class='kw'>=</span> <span class='no'>custom_config</span>)
 <span class='fu'>take_snapshot</span>(
-  <span class='no'>datasets</span>, <span class='kw'>destdir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>(), <span class='kw'>overwrite</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+  <span class='no'>datasets</span>,
+  <span class='kw'>destdir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>(), <span class='kw'>overwrite</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
 )
 
 <span class='fu'><a href='https://rdrr.io/r/base/options.html'>options</a></span>(<span class='no'>restore</span>)
