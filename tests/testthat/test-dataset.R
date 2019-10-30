@@ -1,3 +1,8 @@
+# Avoid warning from using toy default_config()
+restore <- getOption("r2dii_config")
+setup(options(r2dii_config = suppressWarnings(default_config())))
+teardown(options(restore))
+
 .do_skip <- TRUE
 .update <- FALSE
 
@@ -16,7 +21,8 @@ library(r2dii.utils)
 test_that("DebtMarketClimate is sensitive to config file set globally", {
   skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
 
-  default <- withr::with_options(list(r2dii_config = default_config()), {
+  default_config <- suppressWarnings(default_config())
+  default <- withr::with_options(list(r2dii_config = default_config), {
     DebtMarketClimate()
   })
   config <- example_config("config-toy.yml")
@@ -173,6 +179,6 @@ test_that("EQ_OG output is as expected", {
 test_that("Indices output is as expected", {
   skip_if_do_skip()
   skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
-  out <- Indices()
-  expect_known_value(out, "ref-Indices", update = .update)
+
+  expect_known_value(Indices(), "ref-Indices", update = .update)
 })

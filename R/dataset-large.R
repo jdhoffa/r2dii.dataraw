@@ -53,6 +53,15 @@ ALD.SPV <- function() {
 Fund.Data <- function() {
   file <- glue("FundsData{FINANCIAL.TIMESTAMP()}.rda")
   path <- FIN.DATA.PATH("Fund Data", file)
+
+  # FIXME: ASK Klaus why this path does not exist:
+  # ... /Dropbox (2° Investing)/PortCheck/00_Data/02_FinancialData/
+  #  2019Q2/Fund Data/FundsData2019Q2.rda
+  # This other path, for example, does exist:
+  # ... /Dropbox (2° Investing)/PortCheck/00_Data/02_FinancialData/
+  #  2018Q4/Fund Data/FundsData2018Q4.rda
+  check_path(path)
+
   tibble::as_tibble(readr::read_rds(path))
 }
 

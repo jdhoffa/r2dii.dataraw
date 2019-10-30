@@ -335,14 +335,14 @@ Indices <- function() {
   for (i in 1:length(Indexlist)) {
     IndexData <- use_legacy_names(read_csv_(Indexlist[i]))
 
-    if (exists("out")) {
-      out <- rbind(out, IndexData)
+    if (exists("out_indices")) {
+      out_indices <- rbind(out_indices, IndexData)
     } else {
-      out <- IndexData
+      out_indices <- IndexData
     }
   }
 
-  out
+  out_indices
 }
 
 use_legacy_names <- function(data) {

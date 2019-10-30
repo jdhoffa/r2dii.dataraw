@@ -172,3 +172,8 @@ use_newdata_checklist <- function() {
     update {ui_code('expect_known_value()')}"
   )
 }
+
+# Path to a configuration file for tests
+config_demo <- function() {
+  testthat::test_path("config_demo.yml")
+}

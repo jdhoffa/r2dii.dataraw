@@ -1,3 +1,8 @@
+# Avoid warning from using toy default_config()
+restore <- getOption("r2dii_config")
+setup(options(r2dii_config = suppressWarnings(default_config())))
+teardown(options(restore))
+
 .do_skip <- TRUE
 .update <- FALSE
 
@@ -39,6 +44,8 @@ test_that("ALD.SPV output is as expected", {
 test_that("Fund.Data output is as expected", {
   skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
   skip_if_do_skip()
+
+  skip("FIXME: ASK Klaus why 2019Q2/Fund Data/FundsData2019Q2.rda doesn't exist")
   out <- Fund.Data()
   expect_known_value(out, "ref-Fund.Data", update = .update)
 })

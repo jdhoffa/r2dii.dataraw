@@ -1,18 +1,29 @@
-test_that("take_snapshot save BENCH.REGIONS as a tibble", {
+test_that("take_snapshot saves BENCH.REGIONS as a tibble", {
   skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
+
+  # FIXME: Should use config_demo() instead, but if I do so, config
+  # fails to copy. Not sure what's going on
+  withr::local_options(
+    list(r2dii_config = r2dii.utils::example_config()[[2]])
+  )
 
   temp_root <- fs::path(tempdir(), "newdir")
   fs::dir_create(temp_root)
-  # withr::local_dir(temp_root)
-  withr::with_dir(temp_root, {
-    take_snapshot("BENCH.REGIONS")
-  })
+  withr::local_dir(temp_root)
+
+  take_snapshot("BENCH.REGIONS")
   path <- fs::path(temp_root, "BENCH.REGIONS.csv")
   expect_is(readr::read_csv(path), "tbl_df")
 })
 
 test_that("take_snapshot defaults to write snapshots in working directory", {
   skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
+
+  # FIXME: Should use config_demo() instead, but if I do so, config
+  # fails to copy. Not sure what's going on
+  withr::local_options(
+    list(r2dii_config = r2dii.utils::example_config()[[2]])
+  )
 
   temp_root <- fs::path(tempdir(), "newdir")
   fs::dir_create(temp_root)
@@ -28,17 +39,11 @@ test_that("take_snapshot creates a destdir if it doesn't exist", {
   skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
 
   destdir <- fs::path(tempdir(), "newdir")
-  take_snapshot("BENCH.REGIONS", destdir = destdir)
-  expect_true(fs::dir_exists(destdir))
-  out <- fs::dir_ls(destdir, regexp = "BENCH.REGIONS")
-  expect_length(out, 1L)
-})
-
-test_that("take_snapshot saves an exported dataset to a new `destdir`", {
-  skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
-
-  destdir <- fs::path(tempdir(), "newdir")
-  take_snapshot("BENCH.REGIONS", destdir = destdir)
+  take_snapshot(
+    "BENCH.REGIONS",
+    destdir = destdir,
+    config = suppressWarnings(get_config())
+  )
   expect_true(fs::dir_exists(destdir))
   out <- fs::dir_ls(destdir, regexp = "BENCH.REGIONS")
   expect_length(out, 1L)
@@ -49,72 +54,60 @@ test_that("take_snapshot saves an exported dataset to a new `destdir`", {
 
   destdir <- fs::path(tempdir(), "newdir")
   take_snapshot(
-    "SEC.TYPE.BONDS",
+    "BENCH.REGIONS",
     destdir = destdir,
-    # This config points to a directory containing the relevant data
-    config = test_path("config_2018Q3_export_05082019.yml")
+    config = suppressWarnings(get_config())
+  )
+  expect_true(fs::dir_exists(destdir))
+  out <- fs::dir_ls(destdir, regexp = "BENCH.REGIONS")
+  expect_length(out, 1L)
+})
+
+test_that("take_snapshot saves an exported dataset to a new `destdir`", {
+  skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
+
+  destdir <- fs::path(tempdir(), "newdir")
+  expect_warning(
+    take_snapshot(
+      "SEC.TYPE.BONDS",
+      destdir = destdir,
+      # This config points to a directory containing the relevant data
+      config = config_demo()
+    ),
+    NA
   )
   paths <- fs::dir_ls(destdir)
   csv_txt <- any(stringr::str_detect(paths, stringr::fixed(".csv.txt")))
   expect_false(csv_txt)
 })
 
-test_that("take_snapshot prefers `conig` set locally than globally", {
+test_that("take_snapshot is sensitive to `config` set locally", {
   skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
 
-  out1 <- withr::with_options(list(r2dii_config = default_config()), {
-    take_snapshot(
-      config = default_config(),
-      "DebtMarketClimate", destdir = tempdir(), overwrite = TRUE
-    )
-    vroom::vroom(fs::path(tempdir(), "DebtMarketClimate.csv.gz"))
-  })
+  withr::with_options(list(r2dii_config = "ignore-global-config.yml"), {
+    local_config <- example_config("config_demo.yml")
 
-  config <- config <- r2dii.utils::example_config("config-toy.yml")
-  out2 <- withr::with_options(list(r2dii_config = config), {
-    take_snapshot(
-      config = default_config(),
-      "DebtMarketClimate", destdir = tempdir(), overwrite = TRUE
+    expect_error(
+      take_snapshot(
+      "DebtMarketClimate", destdir = tempdir(), overwrite = TRUE,
+      config = local_config
+      ),
+      NA
     )
-    vroom::vroom(fs::path(tempdir(), "DebtMarketClimate.csv.gz"))
   })
-
-  expect_true(identical(out1, out2))
 })
 
-test_that("take_snapshot is sensitive to `conig`", {
+test_that("snapshot data is sensitive to config set globally", {
   skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
 
-  take_snapshot(
-    config = default_config(),
-    "DebtMarketClimate", destdir = tempdir(), overwrite = TRUE
+  expect_error(
+    # Using a braking config just to prove take_snapshot() to uses it.
+    withr::with_options(list(r2dii_config = "this-will-error.yml"), {
+      take_snapshot("DebtMarketClimate", destdir = tempdir(), overwrite = TRUE)
+    }),
+    "no such file",
+    class = "ENOENT"
   )
-  out1 <- vroom::vroom(fs::path(tempdir(), "DebtMarketClimate.csv.gz"))
-
-  take_snapshot(
-    config = r2dii.utils::example_config("config-toy.yml"),
-    "DebtMarketClimate", destdir = tempdir(), overwrite = TRUE
-  )
-  out2 <- vroom::vroom(fs::path(tempdir(), "DebtMarketClimate.csv.gz"))
-
-  expect_false(identical(out1, out2))
-})
-
-test_that("snapshot data is sensitive to conig set globally", {
-  skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
-
-  out1 <- withr::with_options(list(r2dii_config = default_config()), {
-    take_snapshot("DebtMarketClimate", destdir = tempdir(), overwrite = TRUE)
-    vroom::vroom(fs::path(tempdir(), "DebtMarketClimate.csv.gz"))
-  })
-
-  config <- config <- r2dii.utils::example_config("config-toy.yml")
-  out2 <- withr::with_options(list(r2dii_config = config), {
-    take_snapshot("DebtMarketClimate", destdir = tempdir(), overwrite = TRUE)
-    vroom::vroom(fs::path(tempdir(), "DebtMarketClimate.csv.gz"))
-  })
-
-  expect_false(identical(out1, out2))
 })
 
 test_that("take_snapshot with overwrite = FALSE skips an existing dataset.", {
@@ -132,7 +125,7 @@ test_that("take_snapshot with overwrite = FALSE skips an existing dataset.", {
 })
 
 test_that("take_snapshot with overwrite = FALSE skips an existing config file", {
-  path <- fs::path(tempdir(), "config.yml")
+  path <- fs::path(tempdir(), "config_demo.yml")
   suppressWarnings(take_snapshot("whatever", destdir = tempdir()))
   expect_true(fs::file_exists(path))
 
@@ -146,7 +139,7 @@ test_that("take_snapshot with overwrite = FALSE skips an existing config file", 
 })
 
 test_that("take_snapshot writes the configuration file whatever happens next.", {
-  path <- fs::path(tempdir(), "config.yml")
+  path <- fs::path(tempdir(), "config_demo.yml")
   expect_warning(
     take_snapshot("whatever", destdir = tempdir(), overwrite = TRUE),
     "Can't write.*whatever"
@@ -186,7 +179,7 @@ test_that("take_snapshot writes a character from a data-function", {
     destdir = tempdir(),
     overwrite = TRUE,
     # This config points to a directory containing the relevant data
-    config = test_path("config_2018Q3_export_05082019.yml")
+    config = config_demo()
   )
 
   expect_is(readr::read_lines(path), "character")
