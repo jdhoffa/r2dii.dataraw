@@ -12,7 +12,7 @@ e.g. 23 countries within the MSCI World.
 }
 \examples{
 if (dropbox_exists()) {
-INDEX.REGIONS()
+  INDEX.REGIONS()
 }
 }
 \seealso{

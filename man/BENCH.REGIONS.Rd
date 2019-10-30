@@ -11,13 +11,13 @@ Dataset to bridge from country to all existing bench regions it is in
 }
 \examples{
 if (dropbox_exists()) {
-library(dplyr)
+  library(dplyr)
 
-BENCH.REGIONS()
+  BENCH.REGIONS()
 
-# The `CountryISO` of Namibia is the literal string "NA"
-BENCH.REGIONS() \%>\%
-  filter(Country == "Namibia")
+  # The `CountryISO` of Namibia is the literal string "NA"
+  BENCH.REGIONS() \%>\%
+    filter(Country == "Namibia")
 }
 }
 \seealso{

@@ -11,7 +11,7 @@ Dataset that should probably be removed or outsourced to data store
 }
 \examples{
 if (dropbox_exists()) {
-sector.bridge()
+  sector.bridge()
 }
 }
 \seealso{

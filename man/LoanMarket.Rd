@@ -14,7 +14,7 @@ Dataset
 # Quarter 2, 2019, contains the relevant data
 restore <- options(
   r2dii_config = r2dii.utils::example_config("config_2019Q2.yml")
- )
+)
 
 LoanMarket()
 

@@ -11,7 +11,7 @@ Dataset
 }
 \examples{
 \dontrun{
-if(interactive()) PHYSICAL.RISK.EQ()
+if (interactive()) PHYSICAL.RISK.EQ()
 }
 }
 \seealso{

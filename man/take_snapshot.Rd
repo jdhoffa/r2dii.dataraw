@@ -36,14 +36,16 @@ library(r2dii.utils)
 datasets <- "DebtMarketClimate"
 custom_config <- r2dii.utils::example_config("config-toy.yml")
 take_snapshot(
-  datasets, destdir = tempdir(), overwrite = TRUE, config = custom_config
- )
+  datasets,
+  destdir = tempdir(), overwrite = TRUE, config = custom_config
+)
 
 # Use `options(r2dii_config = <custom_config>)` to provide a custom
 # configuration file, globally -- to affect your entire R session
 restore <- options(r2dii_config = custom_config)
 take_snapshot(
-  datasets, destdir = tempdir(), overwrite = TRUE
+  datasets,
+  destdir = tempdir(), overwrite = TRUE
 )
 
 options(restore)
