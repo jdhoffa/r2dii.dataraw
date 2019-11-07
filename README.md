@@ -7,6 +7,8 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build
+status](https://travis-ci.org/2DegreesInvesting/r2dii.dataraw.svg?branch=master)](https://travis-ci.org/2DegreesInvesting/r2dii.dataraw)
 <!-- badges: end -->
 
 The goal of the r2dii.dataraw package is to access raw or
@@ -15,21 +17,13 @@ dropbox folder and to take a snapshot of it.
 
 ## Installation
 
-To minimize installation errors, ensure your R environment is as
-follows:
-
-  - R version is recent.
-  - All packages are updated (run `update.packages()`; maybe use `ask =
-    FALSE`).
-  - No other R session is running.
-  - Current R session is clean (click *Session \> Restart R*).
-
-<!-- end list -->
-
 ``` r
 # install.packages("devtools")
 devtools::install_github("2DegreesInvesting/r2dii.dataraw")
 ```
+
+[How to minimize installation
+errors?](https://gist.github.com/maurolepore/a0187be9d40aee95a43f20a85f4caed6#installation)
 
 ## Example
 

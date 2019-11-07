@@ -22,17 +22,12 @@ The goal of the r2dii.dataraw package is to access raw or lightly-prepared data.
 
 ## Installation
 
-To minimize installation errors, ensure your R environment is as follows:
-
-* R version is recent.
-* All packages are updated (run `update.packages()`; maybe use `ask = FALSE`).
-* No other R session is running.
-* Current R session is clean (click _Session \> Restart R_).
-
 ```r
 # install.packages("devtools")
 devtools::install_github("2DegreesInvesting/r2dii.dataraw")
 ```
+
+[How to minimize installation errors?](https://gist.github.com/maurolepore/a0187be9d40aee95a43f20a85f4caed6#installation)
 
 ## Example 
 
