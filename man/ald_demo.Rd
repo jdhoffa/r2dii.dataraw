@@ -18,7 +18,7 @@ ald_demo
 \link{data_dictionary}
 
 Other demo datasets: \code{\link{data_dictionary}},
-  \code{\link{loanbook_demo}}
+  \code{\link{loanbook_demo}}, \code{\link{overwrite_demo}}
 }
 \concept{demo datasets}
 \keyword{datasets}
