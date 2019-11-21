@@ -15,30 +15,48 @@ if (dropbox_exists()) {
 }
 }
 \seealso{
-Other datasets in Reference to remove or outsource to data store: \code{\link{BicsSectorBridge}},
-  \code{\link{GROUPS.GOVT}}, \code{\link{RevenueSplit}},
-  \code{\link{TYPE.EQUITY}}, \code{\link{TYPE.OTHERS}},
-  \code{\link{sector.bridge}}
+Other datasets in Reference to remove or outsource to data store: 
+\code{\link{BicsSectorBridge}()},
+\code{\link{GROUPS.GOVT}()},
+\code{\link{RevenueSplit}()},
+\code{\link{TYPE.EQUITY}()},
+\code{\link{TYPE.OTHERS}()},
+\code{\link{sector.bridge}()}
 
-Other possible_snapshots: \code{\link{ALD.BV}},
-  \code{\link{ALD.CB}}, \code{\link{ALD.CC}},
-  \code{\link{ALD.EQ}}, \code{\link{ALD.SPV}},
-  \code{\link{BALANCE.SHEET.DATA}},
-  \code{\link{BENCH.REGIONS}},
-  \code{\link{BicsSectorBridge}}, \code{\link{CB_OG}},
-  \code{\link{DebtMarketClimate}},
-  \code{\link{DebtMarket}}, \code{\link{EQMarket.Size}},
-  \code{\link{EQ_OG}}, \code{\link{FIN.DATA}},
-  \code{\link{Fund.Data}}, \code{\link{FundsTrusts}},
-  \code{\link{GROUPS.GOVT}}, \code{\link{INDEX.REGIONS}},
-  \code{\link{Indices}}, \code{\link{LoanMarketClimate}},
-  \code{\link{LoanMarket}}, \code{\link{PHYSICAL.RISK.CB}},
-  \code{\link{PHYSICAL.RISK.EQ}}, \code{\link{Receipts}},
-  \code{\link{RevenueSplit}}, \code{\link{SCENLong}},
-  \code{\link{SCEN}}, \code{\link{SEC.TYPE.BONDS}},
-  \code{\link{TYPE.BONDS}}, \code{\link{TYPE.EQUITY}},
-  \code{\link{TYPE.OTHERS}}, \code{\link{TYPE.RECEIPTS}},
-  \code{\link{sector.bridge}}
+Other possible_snapshots: 
+\code{\link{ALD.BV}()},
+\code{\link{ALD.CB}()},
+\code{\link{ALD.CC}()},
+\code{\link{ALD.EQ}()},
+\code{\link{ALD.SPV}()},
+\code{\link{BALANCE.SHEET.DATA}()},
+\code{\link{BENCH.REGIONS}()},
+\code{\link{BicsSectorBridge}()},
+\code{\link{CB_OG}()},
+\code{\link{DebtMarketClimate}()},
+\code{\link{DebtMarket}()},
+\code{\link{EQMarket.Size}()},
+\code{\link{EQ_OG}()},
+\code{\link{FIN.DATA}()},
+\code{\link{Fund.Data}()},
+\code{\link{FundsTrusts}()},
+\code{\link{GROUPS.GOVT}()},
+\code{\link{INDEX.REGIONS}()},
+\code{\link{Indices}()},
+\code{\link{LoanMarketClimate}()},
+\code{\link{LoanMarket}()},
+\code{\link{PHYSICAL.RISK.CB}()},
+\code{\link{PHYSICAL.RISK.EQ}()},
+\code{\link{Receipts}()},
+\code{\link{RevenueSplit}()},
+\code{\link{SCENLong}()},
+\code{\link{SCEN}()},
+\code{\link{SEC.TYPE.BONDS}()},
+\code{\link{TYPE.BONDS}()},
+\code{\link{TYPE.EQUITY}()},
+\code{\link{TYPE.OTHERS}()},
+\code{\link{TYPE.RECEIPTS}()},
+\code{\link{sector.bridge}()}
 }
 \concept{datasets in Reference to remove or outsource to data store}
 \concept{possible_snapshots}

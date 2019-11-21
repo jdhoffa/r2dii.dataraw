@@ -19,7 +19,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Mauro Lepore \email{mauro@2degrees-investing.org} (0000-0002-1986-7988)
+\strong{Maintainer}: Mauro Lepore \email{mauro@2degrees-investing.org} (\href{https://orcid.org/0000-0002-1986-7988}{ORCID})
 
 Authors:
 \itemize{

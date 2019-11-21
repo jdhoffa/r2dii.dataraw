@@ -1,3 +1,4 @@
+ald
 config
 dataraw
 datastore
@@ -8,11 +9,10 @@ dropbox
 eval
 factsheets
 funder
-http
 Lifecycle
 loanbook
-ly
 Metaprogramming
 MSCI
+ORCID
 summarise
 tibble

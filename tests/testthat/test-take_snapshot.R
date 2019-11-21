@@ -89,8 +89,9 @@ test_that("take_snapshot is sensitive to `config` set locally", {
 
     expect_error(
       take_snapshot(
-      "DebtMarketClimate", destdir = tempdir(), overwrite = TRUE,
-      config = local_config
+        "DebtMarketClimate",
+        destdir = tempdir(), overwrite = TRUE,
+        config = local_config
       ),
       NA
     )

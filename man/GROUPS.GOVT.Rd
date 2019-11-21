@@ -13,33 +13,52 @@ Dataset that should probably be removed or outsourced to data store
 GROUPS.GOVT()
 }
 \seealso{
-Other datasets in Reference to remove or outsource to data store: \code{\link{BicsSectorBridge}},
-  \code{\link{RevenueSplit}}, \code{\link{SectorBridge}},
-  \code{\link{TYPE.EQUITY}}, \code{\link{TYPE.OTHERS}},
-  \code{\link{sector.bridge}}
+Other datasets in Reference to remove or outsource to data store: 
+\code{\link{BicsSectorBridge}()},
+\code{\link{RevenueSplit}()},
+\code{\link{SectorBridge}()},
+\code{\link{TYPE.EQUITY}()},
+\code{\link{TYPE.OTHERS}()},
+\code{\link{sector.bridge}()}
 
-Other datasets that stand alone: \code{\link{TYPE.EQUITY}},
-  \code{\link{TYPE.OTHERS}}
+Other datasets that stand alone: 
+\code{\link{TYPE.EQUITY}()},
+\code{\link{TYPE.OTHERS}()}
 
-Other possible_snapshots: \code{\link{ALD.BV}},
-  \code{\link{ALD.CB}}, \code{\link{ALD.CC}},
-  \code{\link{ALD.EQ}}, \code{\link{ALD.SPV}},
-  \code{\link{BALANCE.SHEET.DATA}},
-  \code{\link{BENCH.REGIONS}},
-  \code{\link{BicsSectorBridge}}, \code{\link{CB_OG}},
-  \code{\link{DebtMarketClimate}},
-  \code{\link{DebtMarket}}, \code{\link{EQMarket.Size}},
-  \code{\link{EQ_OG}}, \code{\link{FIN.DATA}},
-  \code{\link{Fund.Data}}, \code{\link{FundsTrusts}},
-  \code{\link{INDEX.REGIONS}}, \code{\link{Indices}},
-  \code{\link{LoanMarketClimate}},
-  \code{\link{LoanMarket}}, \code{\link{PHYSICAL.RISK.CB}},
-  \code{\link{PHYSICAL.RISK.EQ}}, \code{\link{Receipts}},
-  \code{\link{RevenueSplit}}, \code{\link{SCENLong}},
-  \code{\link{SCEN}}, \code{\link{SEC.TYPE.BONDS}},
-  \code{\link{SectorBridge}}, \code{\link{TYPE.BONDS}},
-  \code{\link{TYPE.EQUITY}}, \code{\link{TYPE.OTHERS}},
-  \code{\link{TYPE.RECEIPTS}}, \code{\link{sector.bridge}}
+Other possible_snapshots: 
+\code{\link{ALD.BV}()},
+\code{\link{ALD.CB}()},
+\code{\link{ALD.CC}()},
+\code{\link{ALD.EQ}()},
+\code{\link{ALD.SPV}()},
+\code{\link{BALANCE.SHEET.DATA}()},
+\code{\link{BENCH.REGIONS}()},
+\code{\link{BicsSectorBridge}()},
+\code{\link{CB_OG}()},
+\code{\link{DebtMarketClimate}()},
+\code{\link{DebtMarket}()},
+\code{\link{EQMarket.Size}()},
+\code{\link{EQ_OG}()},
+\code{\link{FIN.DATA}()},
+\code{\link{Fund.Data}()},
+\code{\link{FundsTrusts}()},
+\code{\link{INDEX.REGIONS}()},
+\code{\link{Indices}()},
+\code{\link{LoanMarketClimate}()},
+\code{\link{LoanMarket}()},
+\code{\link{PHYSICAL.RISK.CB}()},
+\code{\link{PHYSICAL.RISK.EQ}()},
+\code{\link{Receipts}()},
+\code{\link{RevenueSplit}()},
+\code{\link{SCENLong}()},
+\code{\link{SCEN}()},
+\code{\link{SEC.TYPE.BONDS}()},
+\code{\link{SectorBridge}()},
+\code{\link{TYPE.BONDS}()},
+\code{\link{TYPE.EQUITY}()},
+\code{\link{TYPE.OTHERS}()},
+\code{\link{TYPE.RECEIPTS}()},
+\code{\link{sector.bridge}()}
 }
 \concept{datasets in Reference to remove or outsource to data store}
 \concept{datasets that stand alone}

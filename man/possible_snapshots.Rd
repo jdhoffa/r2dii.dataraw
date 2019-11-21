@@ -16,6 +16,7 @@ Datasets to snapshot
 possible_snapshots()
 }
 \seealso{
-Other handle snapshots: \code{\link{take_snapshot}}
+Other handle snapshots: 
+\code{\link{take_snapshot}()}
 }
 \concept{handle snapshots}
