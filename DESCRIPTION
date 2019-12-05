@@ -29,31 +29,23 @@ Depends:
     R (>= 3.4),
     r2dii.utils (>= 0.0.0.9000)
 Imports: 
-    config,
-    covr,
-    desc,
     dplyr,
     fs,
     glue,
-    here,
-    lubridate,
     magrittr,
-    pkgdown,
     purrr,
     readr,
     rlang,
-    stats,
-    stringr,
-    tibble,
     usethis,
     utils,
-    vroom,
-    withr
+    vroom
 Suggests: 
     datasets,
+    here,
     rmarkdown,
     roxygen2,
-    testthat
+    testthat,
+    withr
 Remotes: 
     2DegreesInvesting/r2dii.utils
 Encoding: UTF-8

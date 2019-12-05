@@ -13,8 +13,8 @@ skip_if_do_skip <- function(msg = "Skipping dataset for speed.",
   }
 }
 
-# For devtools::check() to be consistent with devtools::test()
-library(tibble)
+# Use tibble() for devtools::check() to be consistent with devtools::test()
+library(dplyr)
 
 library(r2dii.utils)
 

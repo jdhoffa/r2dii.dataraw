@@ -62,7 +62,7 @@ Fund.Data <- function() {
   #  2018Q4/Fund Data/FundsData2018Q4.rda
   check_path(path)
 
-  tibble::as_tibble(readr::read_rds(path))
+  as_tibble(readr::read_rds(path))
 }
 
 #' Dataset

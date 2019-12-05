@@ -7,7 +7,7 @@
 #' then create a new dataset issue at <http://bit.ly/new-dataset-issue>.
 #'
 #' @family demo datasets
-#' @return A [tibble::tibble].
+#' @return A [dplyr::tibble].
 #'
 #' @export
 #' @examples

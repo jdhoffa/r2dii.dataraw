@@ -26,7 +26,7 @@ BENCH.REGIONS <- function() {
         .data$CountryISO
       )
     ) %>%
-    tibble::as_tibble()
+    as_tibble()
 }
 
 #' Dataset to identify the equity index regions based on the MSCI factsheets
@@ -134,7 +134,7 @@ RevenueSplit <- function() {
 # reading the data from a more stable directory.
 path_reference <- function(...) {
   r2dii.utils::path_dropbox_2dii(
-    glue::glue("2{degrees()} Investing Team"),
+    glue("2{degrees()} Investing Team"),
     "People",
     "Klaus",
     "GitHub",

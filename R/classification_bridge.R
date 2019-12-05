@@ -8,7 +8,7 @@
 #' @aliases isic_classification nace_classification naics_classification
 #' @seealso [data_dictionary()].
 #'
-#' @return A [tibble::tibble].
+#' @return A [dplyr::tibble].
 #'
 #' @examples
 #' isic_classification

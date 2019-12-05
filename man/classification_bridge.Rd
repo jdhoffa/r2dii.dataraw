@@ -7,7 +7,7 @@
 \alias{naics_classification}
 \title{Datasets to translate (bridge) common sector-classification codes}
 \value{
-A \link[tibble:tibble]{tibble::tibble}.
+A \link[dplyr:tibble]{dplyr::tibble}.
 }
 \description{
 These datasets help to translate (bridge) common sector classification codes

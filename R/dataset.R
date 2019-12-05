@@ -88,7 +88,7 @@ BALANCE.SHEET.DATA <- function() {
 #' }
 EQMarket.Size <- function() {
   path <- EQMARKET.DATA.PATH("EQMarketSizeBasedOnIndices.csv")
-  tibble::as_tibble(read_csv_(path))
+  as_tibble(read_csv_(path))
 }
 
 #' Dataset
@@ -129,7 +129,7 @@ DebtMarket <- function() {
 #' }
 PHYSICAL.RISK.EQ <- function() {
   path <- MASTER.DATA.PATH("PortCheck_MasterData_Risk_Ownership.rda")
-  tibble::as_tibble(readr::read_rds(path))
+  as_tibble(readr::read_rds(path))
 }
 
 #' Dataset
@@ -142,7 +142,7 @@ PHYSICAL.RISK.EQ <- function() {
 #' }
 PHYSICAL.RISK.CB <- function() {
   path <- MASTER.DATA.PATH("PortCheck_MasterData_Risk_Debt.rda")
-  tibble::as_tibble(readr::read_rds(path))
+  as_tibble(readr::read_rds(path))
 }
 
 #' Dataset
@@ -421,7 +421,7 @@ SCEN_raw <- function() {
   data <- read_csv_(SCENARIO.DATA.PATH(file))
 
   data %>%
-    tibble::as_tibble() %>%
+    as_tibble() %>%
     dplyr::filter(
       !(.data$Technology %in% c("HydroCap", "NuclearCap") & .data$Units == "PJ")
     )

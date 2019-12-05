@@ -1,7 +1,7 @@
 test_that("all classification data has minimim expected names", {
   ends_with_classification <- grep(
     pattern = "_classification$",
-    x = exported_data("r2dii.dataraw"),
+    x = ls_data("r2dii.dataraw"),
     value = TRUE
   )
 

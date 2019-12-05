@@ -1,3 +1,7 @@
+config_demo <- function() {
+  testthat::test_path("config_demo.yml")
+}
+
 test_that("take_snapshot saves BENCH.REGIONS as a tibble", {
   skip_if_not(dropbox_exists(), "2dii's dropbox folder doesn't exist.")
 
@@ -77,7 +81,7 @@ test_that("take_snapshot saves an exported dataset to a new `destdir`", {
     NA
   )
   paths <- fs::dir_ls(destdir)
-  csv_txt <- any(stringr::str_detect(paths, stringr::fixed(".csv.txt")))
+  csv_txt <- any(grepl(".csv.txt", paths, fixed = TRUE))
   expect_false(csv_txt)
 })
 

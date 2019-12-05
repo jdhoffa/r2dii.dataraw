@@ -1,6 +1,6 @@
 take_snapshot_impl <- function(x, destdir, overwrite) {
   if (!overwrite && already_exists(x, destdir)) {
-    inform(glue("Skipping existing snapshot of {usethis::ui_code(x)}."))
+    inform(glue("Skipping existing snapshot of `{x}`."))
     return(invisible(x))
   }
 
@@ -11,9 +11,10 @@ take_snapshot_impl <- function(x, destdir, overwrite) {
     fs::dir_create(directory)
   }
 
-  is_exported_data <- x %in% ls_data()
+  package <- "r2dii.dataraw"
+  is_exported_data <- x %in% ls_data(package)
   if (is_exported_data) {
-    data <- get_data()[[x]]
+    data <- get_data(package)[[x]]
   } else {
     data <- x %>%
       purrr::invoke_map() %>%
@@ -24,6 +25,7 @@ take_snapshot_impl <- function(x, destdir, overwrite) {
     # Compress
     path <- glue("{path}.gz")
   }
+
   if (is.data.frame(data)) vroom::vroom_write(data, path, delim = ",")
 
   if (is.character(data)) {
@@ -105,7 +107,7 @@ take_snapshot <- function(datasets = NULL,
     fs::dir_create(destdir)
   }
 
-  withr::with_options(list(r2dii_config = config), {
+  with_options(list(r2dii_config = config), {
     copy_config(destdir, overwrite = overwrite, config = config)
 
     datasets %>%
@@ -181,18 +183,18 @@ warn_snapshot_errors <- function(results) {
 #' possible_snapshots()
 possible_snapshots <- function() {
   search_docs("r2dii.dataraw") %>%
-    dplyr::filter(stringr::str_detect(.data$concept, "possible_snapshots")) %>%
+    dplyr::filter(grepl("possible_snapshots", .data$concept)) %>%
     dplyr::pull(.data$alias)
 }
 
 # Get datasets in data/
-get_data <- function() {
-  mget(ls_data(), envir = as.environment("package:r2dii.dataraw"))
+get_data <- function(package = "r2dii.dataraw") {
+  mget(ls_data(package), envir = as.environment(glue("package:{package}")))
 }
 
 # List datasets in data/
-ls_data <- function() {
-  utils::data(package = "r2dii.dataraw")$results[, "Item"]
+ls_data <- function(package) {
+  utils::data(package = package)$results[, "Item"]
 }
 
 search_docs <- function(packages = NULL) {
@@ -200,7 +202,7 @@ search_docs <- function(packages = NULL) {
     purrr::reduce(utils::hsearch_db(), dplyr::full_join)
   )
 
-  result <- rlang::set_names(tibble::as_tibble(docs), tolower)
+  result <- rlang::set_names(as_tibble(docs), tolower)
 
   if (is.null(packages)) {
     return(result)
