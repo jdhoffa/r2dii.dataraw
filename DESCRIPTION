@@ -1,6 +1,6 @@
 Package: r2dii.dataraw
 Title: Access Raw Or Lightly-Prepared Data
-Version: 0.0.2.9000
+Version: 0.0.2.9001
 Authors@R: 
     c(person(given = "Mauro",
              family = "Lepore",
@@ -51,4 +51,4 @@ Remotes:
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.0.2.9000
+RoxygenNote: 7.0.2
