@@ -5,7 +5,7 @@
 \alias{isic_classification}
 \alias{nace_classification}
 \alias{naics_classification}
-\title{Datasets to translate (bridge) common sector-classification codes}
+\title{Datasets to bridge (translate) common sector-classification codes}
 \value{
 A \link[dplyr:tibble]{dplyr::tibble}.
 }
@@ -22,3 +22,4 @@ naics_classification
 \seealso{
 \code{\link[=data_dictionary]{data_dictionary()}}.
 }
+\concept{datasets for bridging sector classification codes}
