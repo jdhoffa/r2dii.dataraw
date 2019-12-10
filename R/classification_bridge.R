@@ -4,7 +4,6 @@
 #' from the wild to codes we use in 2dii such as 'power', 'oil and gas', 'coal',
 #' 'automotive', 'aviation', 'concrete', 'steel', and 'shipping'.
 #'
-#' @name classification_bridge
 #' @aliases isic_classification nace_classification naics_classification
 #' @seealso [data_dictionary()].
 #'
@@ -12,8 +11,18 @@
 #'
 #' @return A [dplyr::tibble].
 #'
+#' @export
+#'
 #' @examples
 #' isic_classification
 #' nace_classification
 #' naics_classification
-NULL
+"isic_classification"
+
+#' @export
+#' @rdname isic_classification
+"nace_classification"
+
+#' @export
+#' @rdname isic_classification
+"naics_classification"
