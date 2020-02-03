@@ -7,6 +7,7 @@ test_that("data_dictionary defines the expected objects", {
     "data_dictionary",
     "loanbook",
     "ald",
+    "scenario",
     "nace_classification",
     "isic_classification"
   )
