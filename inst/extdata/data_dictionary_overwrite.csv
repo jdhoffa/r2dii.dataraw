@@ -1,5 +1,5 @@
 dataset,column,typeof,definition
-overwrite,id,character,IDs of the entities to overwrite
+overwrite,id_2dii,character,IDs of the entities to overwrite
 overwrite,level,character,Which level should be overwritten (e.g. direct_loantaker or ultimate_parent)
 overwrite,name,character,"Overwrite name (if only overwriting sector, type NA)"
 overwrite,sector,character,"Overwrite sector (if only overwriting name, type NA)"
