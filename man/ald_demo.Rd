@@ -19,8 +19,10 @@ ald_demo
 
 Other demo datasets: 
 \code{\link{data_dictionary}()},
+\code{\link{iso_codes}},
 \code{\link{loanbook_demo}},
 \code{\link{overwrite_demo}},
+\code{\link{region_isos}},
 \code{\link{scenario_demo}}
 }
 \concept{demo datasets}
