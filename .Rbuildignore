@@ -13,3 +13,4 @@
 
 ^\.github$
 ^\.travis\.yml$
+^LICENSE\.md$

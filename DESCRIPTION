@@ -21,7 +21,7 @@ Authors@R:
 Description: The goal of this package is to access raw or
     lightly-prepared data. It allows you to access "live" data from 2dii's
     dropbox folder and to take a snapshot of it.
-License: file LICENSE
+License: GPL-3
 URL: https://github.com/2DegreesInvesting/r2dii.dataraw
 BugReports: 
     https://github.com/2DegreesInvesting/r2dii.dataraw/issues
