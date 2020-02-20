@@ -14,3 +14,4 @@
 ^\.github$
 ^\.travis\.yml$
 ^LICENSE\.md$
+^\.github/workflows/pkgdown\.yaml$
