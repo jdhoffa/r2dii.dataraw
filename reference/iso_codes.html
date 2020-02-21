@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dataset — ALD.EQ • r2dii.dataraw</title>
+<title>A dataset linking country names with their ISO code — iso_codes • r2dii.dataraw</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Dataset — ALD.EQ" />
-<meta property="og:description" content="Dataset" />
+<meta property="og:title" content="A dataset linking country names with their ISO code — iso_codes" />
+<meta property="og:description" content="This is a dataset useful when mapping regional benchmarks to countries." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -117,77 +117,52 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Dataset</h1>
-    <small class="dont-index">Source: <a href='https://github.com/2DegreesInvesting/r2dii.dataraw/blob/master/R/dataset-large.R'><code>R/dataset-large.R</code></a></small>
-    <div class="hidden name"><code>ALD.EQ.Rd</code></div>
+    <h1>A dataset linking country names with their ISO code</h1>
+    <small class="dont-index">Source: <a href='https://github.com/2DegreesInvesting/r2dii.dataraw/blob/master/R/iso_codes.R'><code>R/iso_codes.R</code></a></small>
+    <div class="hidden name"><code>iso_codes.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Dataset</p>
+    <p>This is a dataset useful when mapping regional benchmarks to countries.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ALD.EQ</span>()</pre>
+    <pre class="usage"><span class='no'>iso_codes</span></pre>
 
 
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>An object of class <code>spec_tbl_df</code> (inherits from <code>tbl_df</code>, <code>tbl</code>, <code>data.frame</code>) with 286 rows and 2 columns.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other datasets in datastore: 
-<code><a href='ALD.BV.html'>ALD.BV</a>()</code>,
-<code><a href='ALD.CB.html'>ALD.CB</a>()</code>,
-<code><a href='ALD.CC.html'>ALD.CC</a>()</code>,
-<code><a href='ALD.SPV.html'>ALD.SPV</a>()</code>,
-<code><a href='BALANCE.SHEET.DATA.html'>BALANCE.SHEET.DATA</a>()</code>,
-<code><a href='CB_OG.html'>CB_OG</a>()</code>,
-<code><a href='EQ_OG.html'>EQ_OG</a>()</code>,
-<code><a href='FIN.DATA.html'>FIN.DATA</a>()</code>,
-<code><a href='FundsTrusts.html'>FundsTrusts</a>()</code>,
-<code><a href='Receipts.html'>Receipts</a>()</code>,
-<code><a href='SEC.TYPE.BONDS.html'>SEC.TYPE.BONDS</a>()</code>,
-<code><a href='TYPE.BONDS.html'>TYPE.BONDS</a>()</code>,
-<code><a href='TYPE.RECEIPTS.html'>TYPE.RECEIPTS</a>()</code></p>
-<p>Other possible_snapshots: 
-<code><a href='ALD.BV.html'>ALD.BV</a>()</code>,
-<code><a href='ALD.CB.html'>ALD.CB</a>()</code>,
-<code><a href='ALD.CC.html'>ALD.CC</a>()</code>,
-<code><a href='ALD.SPV.html'>ALD.SPV</a>()</code>,
-<code><a href='BALANCE.SHEET.DATA.html'>BALANCE.SHEET.DATA</a>()</code>,
-<code><a href='BENCH.REGIONS.html'>BENCH.REGIONS</a>()</code>,
-<code><a href='BicsSectorBridge.html'>BicsSectorBridge</a>()</code>,
-<code><a href='CB_OG.html'>CB_OG</a>()</code>,
-<code><a href='DebtMarketClimate.html'>DebtMarketClimate</a>()</code>,
-<code><a href='DebtMarket.html'>DebtMarket</a>()</code>,
-<code><a href='EQMarket.Size.html'>EQMarket.Size</a>()</code>,
-<code><a href='EQ_OG.html'>EQ_OG</a>()</code>,
-<code><a href='FIN.DATA.html'>FIN.DATA</a>()</code>,
-<code><a href='Fund.Data.html'>Fund.Data</a>()</code>,
-<code><a href='FundsTrusts.html'>FundsTrusts</a>()</code>,
-<code><a href='GROUPS.GOVT.html'>GROUPS.GOVT</a>()</code>,
-<code><a href='INDEX.REGIONS.html'>INDEX.REGIONS</a>()</code>,
-<code><a href='Indices.html'>Indices</a>()</code>,
-<code><a href='LoanMarketClimate.html'>LoanMarketClimate</a>()</code>,
-<code><a href='LoanMarket.html'>LoanMarket</a>()</code>,
-<code><a href='PHYSICAL.RISK.CB.html'>PHYSICAL.RISK.CB</a>()</code>,
-<code><a href='PHYSICAL.RISK.EQ.html'>PHYSICAL.RISK.EQ</a>()</code>,
-<code><a href='Receipts.html'>Receipts</a>()</code>,
-<code><a href='RevenueSplit.html'>RevenueSplit</a>()</code>,
-<code><a href='SCENLong.html'>SCENLong</a>()</code>,
-<code><a href='SCEN.html'>SCEN</a>()</code>,
-<code><a href='SEC.TYPE.BONDS.html'>SEC.TYPE.BONDS</a>()</code>,
-<code><a href='SectorBridge.html'>SectorBridge</a>()</code>,
-<code><a href='TYPE.BONDS.html'>TYPE.BONDS</a>()</code>,
-<code><a href='TYPE.EQUITY.html'>TYPE.EQUITY</a>()</code>,
-<code><a href='TYPE.OTHERS.html'>TYPE.OTHERS</a>()</code>,
-<code><a href='TYPE.RECEIPTS.html'>TYPE.RECEIPTS</a>()</code>,
-<code><a href='sector.bridge.html'>sector.bridge</a>()</code></p></div>
+    <div class='dont-index'><p><a href='data_dictionary.html'>data_dictionary</a></p>
+<p>Other demo datasets: 
+<code><a href='ald_demo.html'>ald_demo</a></code>,
+<code><a href='data_dictionary.html'>data_dictionary</a>()</code>,
+<code><a href='loanbook_demo.html'>loanbook_demo</a></code>,
+<code><a href='overwrite_demo.html'>overwrite_demo</a></code>,
+<code><a href='region_isos.html'>region_isos</a></code>,
+<code><a href='scenario_demo.html'>scenario_demo</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'>ALD.EQ</span>()
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='no'>iso_codes</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 286 x 2</span><span>
+#&gt;    country             country_iso
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>               </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      
+#&gt; </span><span style='color: #555555;'> 1</span><span> afghanistan         af         
+#&gt; </span><span style='color: #555555;'> 2</span><span> albania             al         
+#&gt; </span><span style='color: #555555;'> 3</span><span> algeria             dz         
+#&gt; </span><span style='color: #555555;'> 4</span><span> american samoa      as         
+#&gt; </span><span style='color: #555555;'> 5</span><span> andorra             ad         
+#&gt; </span><span style='color: #555555;'> 6</span><span> angola              ao         
+#&gt; </span><span style='color: #555555;'> 7</span><span> anguilla            ai         
+#&gt; </span><span style='color: #555555;'> 8</span><span> antigua and barbuda ag         
+#&gt; </span><span style='color: #555555;'> 9</span><span> argentina           ar         
+#&gt; </span><span style='color: #555555;'>10</span><span> armenia             am         
+#&gt; </span><span style='color: #555555;'># … with 276 more rows</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#format">Format</a></li>
       <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>

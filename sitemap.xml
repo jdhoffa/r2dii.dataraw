@@ -115,6 +115,9 @@
     <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/data_dictionary.html</loc>
   </url>
   <url>
+    <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/iso_codes.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/loanbook_demo.html</loc>
   </url>
   <url>
@@ -131,6 +134,12 @@
   </url>
   <url>
     <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/r2dii.dataraw-package.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/region_isos.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/scenario_demo.html</loc>
   </url>
   <url>
     <loc>https://github.com/2DegreesInvesting/r2dii.dataraw//reference/sector.bridge.html</loc>
