@@ -9,3 +9,4 @@
 ^data-raw$
 ^pkgdown$
 ^r2dii\.dataraw\.Rproj$
+^\.github/workflows/pr-commands\.yaml$
