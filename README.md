@@ -9,6 +9,8 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis build
 status](https://travis-ci.org/2DegreesInvesting/r2dii.dataraw.svg?branch=master)](https://travis-ci.org/2DegreesInvesting/r2dii.dataraw)
+[![Codecov test
+coverage](https://codecov.io/gh/2degreesinvesting/r2dii.dataraw/branch/master/graph/badge.svg)](https://codecov.io/gh/2degreesinvesting/r2dii.dataraw?branch=master)
 <!-- badges: end -->
 
 The goal of the r2dii.dataraw package is to access raw or
@@ -27,4 +29,4 @@ errors?](https://gist.github.com/maurolepore/a0187be9d40aee95a43f20a85f4caed6#in
 
 ## Example
 
-[Go to examples](https://2degreesinvesting.github.io/r2dii/#examples)
+[Go to examples](https://2degreesinvesting.github.io/r2dii/#examples).

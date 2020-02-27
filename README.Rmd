@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis build status](https://travis-ci.org/2DegreesInvesting/r2dii.dataraw.svg?branch=master)](https://travis-ci.org/2DegreesInvesting/r2dii.dataraw)
+[![Codecov test coverage](https://codecov.io/gh/2degreesinvesting/r2dii.dataraw/branch/master/graph/badge.svg)](https://codecov.io/gh/2degreesinvesting/r2dii.dataraw?branch=master)
 <!-- badges: end -->
 
 The goal of the r2dii.dataraw package is to access raw or lightly-prepared data. It allows you to access "live" data from 2dii's dropbox folder and to take a snapshot of it.
