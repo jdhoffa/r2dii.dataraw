@@ -1,6 +1,6 @@
 Package: r2dii.dataraw
 Title: Access Raw Or Lightly-Prepared Data
-Version: 0.0.2.9002
+Version: 0.0.2.9003
 Authors@R: 
     c(person(given = "Mauro",
              family = "Lepore",
