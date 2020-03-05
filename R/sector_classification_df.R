@@ -6,6 +6,7 @@
 #' @return A [tibble::tibble()]. The column `code_system` names one of the
 #'   classification systems that 2dii uses. All other columns are defined at
 #'   [data_dictionary()].
+#'
 #' @export
 #'
 #' @examples
@@ -18,11 +19,7 @@
 #'  ) %>%
 #'  dplyr::arrange(column)
 sector_classification_df <- function() {
-  pkg <- "package:r2dii.dataraw"
-  check_is_attached(pkg)
-
-  pkg %>%
-    enlist_datasets(pattern = "_classification$") %>%
+  enlist_datasets("r2dii.dataraw", pattern = "_classification$") %>%
     purrr::imap(~ dplyr::mutate(.x, code_system = toupper(.y))) %>%
     purrr::map(
       dplyr::select,
@@ -39,23 +36,16 @@ sector_classification_df <- function() {
     dplyr::mutate(code_system = gsub("_CLASSIFICATION", "", .data$code_system))
 }
 
-check_is_attached <- function(pkg) {
-  is_attached <- any(grepl(pkg, search()))
-
-  if (!is_attached) {
-    package <- sub("package:", "", pkg)
-    rlang::abort(glue::glue("{package} must be attached.\nRun `library({package})`."))
-  }
-
-  invisible(pkg)
-}
-
 enlist_datasets <- function(package, pattern) {
-  datasets_name <- grep(pattern, exported_data("r2dii.dataraw"), value = TRUE)
+  # Preserve attached packages
+  packages <- sub("package:", "", grep("package", search(), value = TRUE))
+  on.exit(purrr::walk(packages, library, character.only = TRUE), add = TRUE)
 
-  datasets_name %>%
-    purrr::map(~ get(.x, envir = as.environment(package))) %>%
-    purrr::set_names(datasets_name)
+  withr::with_package(package, {
+      data <- grep(pattern, exported_data(package), value = TRUE)
+      purrr::set_names(mget(data, inherits = TRUE), data)
+    }
+  )
 }
 
 exported_data <- function(package) {

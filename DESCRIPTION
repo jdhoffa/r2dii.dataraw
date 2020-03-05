@@ -38,15 +38,15 @@ Imports:
     rlang,
     usethis,
     utils,
-    vroom
+    vroom,
+    withr
 Suggests: 
     covr,
     datasets,
     here,
     rmarkdown,
     roxygen2,
-    testthat (>= 2.1.0),
-    withr
+    testthat (>= 2.1.0)
 Remotes: 
     2DegreesInvesting/r2dii.utils
 Encoding: UTF-8
