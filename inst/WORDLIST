@@ -1,4 +1,5 @@
 ald
+Codecov
 config
 dataraw
 datastore
@@ -10,10 +11,12 @@ dropbox
 eval
 factsheets
 funder
+iso
 Lifecycle
 loanbook
 Metaprogramming
 MSCI
+nace
 ORCID
 summarise
 tibble
